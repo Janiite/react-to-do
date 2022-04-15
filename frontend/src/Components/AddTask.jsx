@@ -15,7 +15,7 @@ const AddTask = ({ onAdd }) => {
       alert("Please add a task ");
       return;
     } else {
-      Axios.post("http://localhost:3001/create", {
+      Axios.post("http://localhost:3001/create", { // send data to db
         task: text,
         day: day,
         reminder: reminder,

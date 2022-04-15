@@ -9,9 +9,8 @@ import Axios from "axios"; //Server API
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
-  const [toggle, setToggle] = useState();
 
-  Axios.get("http://localhost:3001/todos", {}).then((response) => {
+  Axios.get("http://localhost:3001/todos", {}).then((response) => { //Get all data from database
     setTasks(response.data);
   });
 
@@ -24,7 +23,7 @@ function App() {
   //Delete Task
   const deleteTask = (id) => {
     console.log(id);
-    Axios.post("http://localhost:3001/delete", {
+    Axios.post("http://localhost:3001/delete", { // Delete data from database where id is true
       id: id,
     }).then(() => {
       console.log("Done");
@@ -35,10 +34,10 @@ function App() {
   const toggleReminder = (id) => {
     console.log(id);
 
-    Axios.post("http://localhost:3001/get", {
+    Axios.post("http://localhost:3001/get", { //Get task reminders status
       id: id,
     }).then((response) => {
-      Axios.post("http://localhost:3001/update", {
+      Axios.post("http://localhost:3001/update", { //Updates task reminder status to opposite 
         id: id,
         reminder: response.data[0].reminder,
       }).then((result) => {
