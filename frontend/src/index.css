@@ -6,13 +6,19 @@
 }
 
 body {
+  height: 100vh;
   font-family: sans-serif;
-  background: -webkit-linear-gradient(50deg, #2BC0E4 10%, #EAECC6 90%)
+  background: -webkit-linear-gradient(50deg, #2BC0E4 10%, #EAECC6 90%);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(7.7px);
   max-width: 500px;
-  margin: 30px auto;
+  margin: 100px auto;
   overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
@@ -48,7 +54,7 @@ li:nth-child(2n) {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: #016179 ;
   color: #fff; 
   border: none;
   padding: 10px 20px;
@@ -81,7 +87,7 @@ li:nth-child(2n) {
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid #0483a3 ;
 }
 
 .task h3 {
