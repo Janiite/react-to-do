@@ -1,25 +1,20 @@
-import React from 'react'
-import Task from './Task'
-import Axios from "axios";
+import React from "react";
+import Task from "./Task";
 
-
-const Tasks = ({tasks, setTasks, onDelete, onToggle}) => {
-    Axios.get("http://localhost:3001/todos", {}).then((response) => {
-        setTasks(response.data);
-      });
-
+const Tasks = ({ tasks, setTasks, onDelete, onToggle }) => {
   return (
-        <>
-            {
-                tasks.map((task) => (
-                <Task key={task.id} task={task} onDelete={onDelete} onToggle={onToggle} />
-                ))
-                    
-            }
-        </>
-    )
-}
+    <>
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          task={task}
+          reminder={task.reminder}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
+      ))}
+    </>
+  );
+};
 
-
-
-export default Tasks
+export default Tasks;

@@ -20,13 +20,17 @@ app.post("/create", (req, res) => {
   const day = req.body.day;
   const reminder = req.body.reminder;
 
-  db.query("INSERT INTO tasks (task, day, reminder) VALUE (?, ?, ?)", [task, day, reminder], (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
+  db.query(
+    "INSERT INTO tasks (task, day, reminder) VALUE (?, ?, ?)",
+    [task, day, reminder],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
     }
-  });
+  );
 });
 
 app.get("/todos", (req, res) => {
@@ -38,6 +42,23 @@ app.get("/todos", (req, res) => {
         console.log(err);
       } else {
         res.send(result);
+      }
+    }
+  );
+});
+
+app.post("/get", (req, res) => {
+  const id = req.body.id;
+  console.log(id);
+  db.query(
+    "SELECT * FROM tasks WHERE id = ?",
+    [id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+       console.log(result);
       }
     }
   );
@@ -55,16 +76,17 @@ app.post("/delete", (req, res) => {
 });
 
 app.post("/update", (req, res) => {
-  const reminder = !req.body.reminder;
+  const reminder = req.body.reminder;
   const id = req.body.id;
-  db.query("UPDATE tasks SET reminder = ? WHERE id = ?", [reminder, id], (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
+  db.query(
+    "UPDATE tasks SET reminder = ? WHERE id = ?",
+    [reminder, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
     }
-  });
+  );
 });
-
-
-
