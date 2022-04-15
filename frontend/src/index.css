@@ -7,6 +7,7 @@
 
 body {
   font-family: sans-serif;
+  background: -webkit-linear-gradient(50deg, #2BC0E4 10%, #EAECC6 90%)
 }
 
 .container {
@@ -26,10 +27,29 @@ body {
   margin-bottom: 20px;
 }
 
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+li {
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  color: #666
+}
+
+li:nth-child(2n) {
+  background: #f7f7f7
+}
+
+
 .btn {
   display: inline-block;
   background: #000;
-  color: #fff;
+  color: #fff; 
   border: none;
   padding: 10px 20px;
   margin: 5px;
