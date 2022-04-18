@@ -8,6 +8,7 @@ import Tasks from "./Components/Tasks";
 import AddTask from "./Components/AddTask";
 import Axios from "axios"; //Server API
 import{BrowserRouter as Router, Routes, Route, Link,} from 'react-router-dom'
+import Navbar from "./Components/Navbar/Navbar";
 
 
 function App() {
@@ -64,23 +65,27 @@ function App() {
       </Routes> */}
     
     
-    <div className="container">
-      <Header
-        onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
-      />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? (
-        <Tasks
-          tasks={tasks}
-          setTasks={setTasks}
-          onDelete={deleteTask}
-          onToggle={toggleReminder}
+
+      <Navbar />
+      <div className="container">
+    
+        <Header
+          onAdd={() => setShowAddTask(!showAddTask)}
+          showAdd={showAddTask}
         />
-      ) : (
-        "No Tasks to Show"
-      )}
-    </div>
+        {showAddTask && <AddTask onAdd={addTask} />}
+        {tasks.length > 0 ? (
+          <Tasks
+            tasks={tasks}
+            setTasks={setTasks}
+            onDelete={deleteTask}
+            onToggle={toggleReminder}
+          />
+        ) : (
+          "No Tasks to Show"
+        )}
+      </div>
+
     {/* </Router> */}
     </>
   );
