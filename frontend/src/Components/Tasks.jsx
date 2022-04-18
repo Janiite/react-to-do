@@ -11,6 +11,7 @@ const Tasks = ({ tasks, setTasks, onDelete, onToggle }) => {
           reminder={task.reminder}
           onDelete={onDelete}
           onToggle={onToggle}
+          
         />
       ))}
     </>
