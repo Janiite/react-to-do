@@ -5,17 +5,9 @@ import Header from "./Components/Header";
 import Tasks from "./Components/Tasks";
 import AddTask from "./Components/AddTask";
 import Axios from "axios"; //Server API
-<<<<<<< HEAD
 import{BrowserRouter as Router, Routes, Route, Link,} from 'react-router-dom'
 import Navbar from "./Components/Navbar/Navbar";
 
-=======
-// //Navigation
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import Game from "./Game";
-// import ErrorPage from "./ErrorPage";
-// import About from "./About";
->>>>>>> 1c429490f0208df56e35aeaa238219e8024c7a3d
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -73,26 +65,17 @@ function App() {
         <Route path='game' element={<Game/>}/>
         <Route path='*' element={<ErrorPage/>}/>
       </Routes> */}
-<<<<<<< HEAD
     
     
 
       <Navbar />
       <div className="container">
     
-=======
-
-      <div className="container">
->>>>>>> 1c429490f0208df56e35aeaa238219e8024c7a3d
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
         {showAddTask && <AddTask onAdd={addTask} />}
-<<<<<<< HEAD
-=======
-
->>>>>>> 1c429490f0208df56e35aeaa238219e8024c7a3d
         {tasks.length > 0 ? (
           <Tasks
             tasks={tasks}
@@ -104,12 +87,8 @@ function App() {
           "No Tasks to Show"
         )}
       </div>
-<<<<<<< HEAD
 
     {/* </Router> */}
-=======
-      {/* </Router> */}
->>>>>>> 1c429490f0208df56e35aeaa238219e8024c7a3d
     </>
   );
 }
