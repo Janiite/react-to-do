@@ -1,10 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import Header from "./Components/Header";
+import Game from "./Game";
+import ErrorPage from "./ErrorPage";
+import About from "./About";
 import Tasks from "./Components/Tasks";
 import AddTask from "./Components/AddTask";
 import Axios from "axios"; //Server API
-import{BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
+import{BrowserRouter as Router, Routes, Route, Link,} from 'react-router-dom'
 
 
 function App() {
@@ -40,14 +43,27 @@ function App() {
     }).then((response) => {
       Axios.post("http://localhost:3001/update", { //Updates task reminder status to opposite 
         id: id,
-        reminder: response.data[0].reminder,
+        reminder: !response.data[0].reminder,
       }).then((result) => {
+        
         console.log("Reminder toggled");
       });
     });
   };
 
   return (
+    <>
+     
+    
+    {/* <Router>
+      <Routes>
+        <Route path='/' element={<App/>}/>
+        <Route path='about' element={<About/>}/>
+        <Route path='game' element={<Game/>}/>
+        <Route path='*' element={<ErrorPage/>}/>
+      </Routes> */}
+    
+    
     <div className="container">
       <Header
         onAdd={() => setShowAddTask(!showAddTask)}
@@ -65,6 +81,8 @@ function App() {
         "No Tasks to Show"
       )}
     </div>
+    {/* </Router> */}
+    </>
   );
 }
 
