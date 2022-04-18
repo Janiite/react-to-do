@@ -91,7 +91,7 @@ app.post("/update", (req, res) => {
   );
 });
 
-// app.post("/update", (req, res) => {
+// app.post("/edit", (req, res) => {
 //   const task = req.body.task;
 //   const reminder = req.body.reminder;
 //   const id = req.body.id;

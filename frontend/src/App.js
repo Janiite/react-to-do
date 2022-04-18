@@ -57,6 +57,9 @@ function App() {
 
   const edit = (id) => {
       console.log(id + "update");
+      setShowAddTask(true);
+      
+
   };
 
   return (
