@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-const Tasks = ({ tasks, setTasks, onDelete, onToggle }) => {
+const Tasks = ({ tasks, setTasks, onDelete, onToggle, edit }) => {
   return (
     <>
       {tasks.map((task) => (
@@ -11,6 +11,7 @@ const Tasks = ({ tasks, setTasks, onDelete, onToggle }) => {
           reminder={task.reminder}
           onDelete={onDelete}
           onToggle={onToggle}
+          edit={edit}
         />
       ))}
     </>
