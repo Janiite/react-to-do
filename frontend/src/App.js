@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Tasks from "./Components/Tasks";
 import AddTask from "./Components/AddTask";
 import Axios from "axios"; //Server API
+import{BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 
 
 function App() {
