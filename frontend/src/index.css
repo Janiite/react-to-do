@@ -6,7 +6,7 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-family: sans-serif;
   background: -webkit-linear-gradient(50deg, #2BC0E4 10%, #EAECC6 90%);
   background-repeat: no-repeat;

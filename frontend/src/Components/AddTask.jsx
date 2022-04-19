@@ -23,7 +23,11 @@ const AddTask = ({ onAdd }) => {
         console.log(result);
       });
     }
+    onAdd({ text, day, reminder });
 
+    setText("");
+    setDay("");
+    setReminder(false);
     
     
   };
