@@ -58,9 +58,13 @@ function App() {
   const edit = (id) => {
       console.log(id + "update");
       setShowAddTask(true);
+      Axios.post("http://localhost:3001/get", {//Get task reminders status
+      id: id,
+    }).then((response) => {
+      console.log(response.data)
       
 
-  };
+  })};
 
   return (
     <>
