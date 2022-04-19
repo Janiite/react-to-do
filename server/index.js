@@ -91,19 +91,19 @@ app.post("/update", (req, res) => {
   );
 });
 
-// app.post("/edit", (req, res) => {
-//   const task = req.body.task;
-//   const reminder = req.body.reminder;
-//   const id = req.body.id;
-//   db.query(
-//     "UPDATE tasks SET (task = ?, reminder = ? ) WHERE id = ?",
-//     [task, reminder, id],
-//     (err, result) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         res.send(result);
-//       }
-//     }
-//   );
-// });
+app.post("/edit", (req, res) => {
+  const task = req.body.task;
+  const reminder = req.body.reminder;
+  const id = req.body.id;
+  db.query(
+    "UPDATE tasks SET (task = ?, reminder = ? ) WHERE id = ?",
+    [task, reminder, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});

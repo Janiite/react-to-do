@@ -2,7 +2,13 @@ import { FaTimes, FaEdit } from "react-icons/fa";
 
 import React from "react";
 
-const Task = ({ task, onDelete, onToggle, edit }) => {
+const Task = ({ task, onDelete, onToggle }) => {
+
+  const edit = (id) =>{
+    console.log(id + " edit");
+  }
+
+
   return (
     <div
       className={`task ${task.reminder ? "reminder" : ""}`}

@@ -13,6 +13,7 @@ import Axios from "axios"; //Server API
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
+
   const [tasks, setTasks] = useState([]);
 
   Axios.get("http://localhost:3001/todos", {}).then((response) => {
@@ -41,12 +42,14 @@ function App() {
   const toggleReminder = (id) => {
     console.log(id);
 
-    Axios.post("http://localhost:3001/get", {//Get task reminders status
-      
+    Axios.post("http://localhost:3001/get", {
+      //Get task reminders status
+
       id: id,
     }).then((response) => {
-      Axios.post("http://localhost:3001/update", {//Updates task reminder status to opposite
-        
+      Axios.post("http://localhost:3001/update", {
+        //Updates task reminder status to opposite
+
         id: id,
         reminder: !response.data[0].reminder,
       }).then((result) => {
@@ -54,17 +57,6 @@ function App() {
       });
     });
   };
-
-  const edit = (id) => {
-      console.log(id + "update");
-      setShowAddTask(true);
-      Axios.post("http://localhost:3001/get", {//Get task reminders status
-      id: id,
-    }).then((response) => {
-      console.log(response.data)
-      
-
-  })};
 
   return (
     <>
@@ -82,13 +74,13 @@ function App() {
           showAdd={showAddTask}
         />
         {showAddTask && <AddTask onAdd={addTask} />}
+
         {tasks.length > 0 ? (
           <Tasks
             tasks={tasks}
             setTasks={setTasks}
             onDelete={deleteTask}
             onToggle={toggleReminder}
-            edit={edit}
           />
         ) : (
           "No Tasks to Show"
