@@ -3,6 +3,7 @@ import { FcTodoList } from "react-icons/fc";
 import { BsFillBootstrapFill} from "react-icons/bs";
 import { SiMysql } from "react-icons/si";
 import "../Components/Navbar/Navbar.css";
+import { DiTrello} from "react-icons/di";
 
 const About = () => {
   return (
@@ -46,8 +47,8 @@ const About = () => {
             <p><BsFillBootstrapFill/> Bootstrap</p>
           </div>
           <div className="about-component">
-            <h3>The Map() Funtion</h3>
-            <p>To rendering a Tasks to browser</p>
+            <h3><DiTrello size="70px"/> </h3>
+            <p>Create project with Trello</p>
           </div>
           
         </div>
