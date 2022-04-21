@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="NavbarItems">
+    <nav className="NavbarItems nav-menu">
     
         <FcTodoList className="navbar-logo" size="50px" />
       
